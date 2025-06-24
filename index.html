@@ -3,117 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetNourish - Premium Pet Nutrition</title>
+    <title>Farm House - Premium Pet Feeds</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="desktop-view" id="mainView">
-      <!-- Header -->
-      <header>
-        <nav class="container">
-          <div class="logo">
-            <a href="index.html">🐾 PetNourish</a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="shop/index.html">Shop</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="nav-actions">
-            <button class="theme-toggle" onclick="">🌙</button>
-            <button class="cta-btn">Shop Now</button>
-          </div>
-          <div class="mobile-menu" onclick="">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </nav>
-      </header>
+    <!-- Header -->
+    <header>
+      <nav class="container">
+        <div class="logo">
+          <a href="index.html">🐾 Farm House</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" aria-label="Home">Home</a></li>
+          <li><a href="shop/index.html" aria-label="Online Shop">Shop</a></li>
+          <li><a href="#about" aria-label="About">About Us</a></li>
+          <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle Theme"
+          >
+            <span id="theme-toggle-content">🌙</span>
+          </button>
+          <button class="cta-btn">Shop Now</button>
+        </div>
+        <div class="mobile-menu" onclick="toggleMobileMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
 
-      <!-- Hero -->
-      <section class="hero" id="home">
-        <div class="container">
-          <div class="hero-content">
-            <div class="hero-text">
-              <h1>Premium Nutrition for Your Beloved Pets</h1>
-              <p>
-                Your pet's health is our priority. Discover our natural pet food
-                that keeps your furry friends healthy, happy and full of energy.
-              </p>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Premium Feeds for Your Pets</h1>
+            <p>
+              Your pet's health is our priority. Discover our natural pet food
+              that keeps your furry friends healthy, happy and full of energy.
+            </p>
 
-              <div class="hero-actions">
-                <button class="cta-btn">Explore Products</button>
-                <button class="btn-secondary">Learn More</button>
-              </div>
+            <div class="hero-actions">
+              <button class="cta-btn">Explore Feeds</button>
+              <button class="btn-secondary">Learn More</button>
             </div>
-            <div class="hero-image">
-              <div class="product-showcase">
-                <div class="product-card">
-                  <div class="product-icon">🐕</div>
-                  <h3>Dog Food</h3>
-                  <p>Premium nutrition for all breeds</p>
-                </div>
-                <div class="product-card">
-                  <div class="product-icon">🐱</div>
-                  <h3>Cat Food</h3>
-                  <p>Delicious & healthy meal</p>
-                </div>
-                <div class="product-card">
-                  <div class="product-icon">🐹</div>
-                  <h3>Small Pet</h3>
-                  <p>Specialized nutrition</p>
-                </div>
-                <div class="product-card">
-                  <div class="product-icon">🐦</div>
-                  <h3>Bird Food</h3>
-                  <p>Natural seed blends</p>
-                </div>
+          </div>
+          <div class="hero-image">
+            <div class="product-showcase">
+              <div class="product-card">
+                <div class="product-icon">🐕</div>
+                <h3>Dog Food</h3>
+                <p>Premium nutrition for all breeds</p>
+              </div>
+              <div class="product-card">
+                <div class="product-icon">🐱</div>
+                <h3>Cat Food</h3>
+                <p>Delicious & healthy meal</p>
+              </div>
+              <div class="product-card">
+                <div class="product-icon">🐹</div>
+                <h3>Small Pet</h3>
+                <p>Specialized nutrition</p>
+              </div>
+              <div class="product-card">
+                <div class="product-icon">🐦</div>
+                <h3>Bird Food</h3>
+                <p>Natural seed blends</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Features Section -->
-      <section class="features">
-        <div class="container">
-          <div class="section-header">
-            <h2>Why Choose Us?</h2>
+    <!-- Features Section -->
+    <section class="features" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Choose Us?</h2>
+          <p>
+            We're committed to providing the highest quality nutrition for your
+            pets, whichever size or breeds
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🍂</div>
+            <h3>Natural Ingredients</h3>
             <p>
-              We're committed to providing the highest quality nutrition for
-              your pets, whichever size or breeds
+              Made with Premium, natural ingredients sourced from trusted
+              suppliers worldwide
             </p>
           </div>
-          <div class="features-grid">
-            <div class="features-card">
-              <div class="feature-icon">🍂</div>
-              <h3>Natural Ingredents</h3>
-              <p>
-                Made with Premium, natural ingredents sourced from trusted
-                suppliers worldwide
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">🔬</div>
-              <h3>Scientifically Formulated</h3>
-              <p>
-                Developed by veterinary nutritionists to meet your pet specific
-                dietary needs
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">🚌</div>
-              <h3>Fast Delivery</h3>
-              <p>
-                Free shipping on orders over $50 with delivery within 2-3
-                business days
-              </p>
-            </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <h3>Scientifically Formulated</h3>
+            <p>
+              Developed by veterinary nutritionists to meet your pet's specific
+              dietary needs
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚌</div>
+            <h3>Fast Delivery</h3>
+            <p>
+              Free shipping on orders over $50 with delivery within 2-3 business
+              days
+            </p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="featured-products">
+      <div class="container">
+        <h2>Popular Picks</h2>
+        <div class="product-grid">
+          <!-- Products -->
+        </div>
+        <button class="shopnow-btn">Shop Now</button>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>Good things our Customers say About Us:</h2>
+      </div>
+      <div class="testimonial-grid">
+        <!-- Testimonies -->
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-items">
+          <h4>Where do you source your ingredients?</h4>
+          <p>we work with verified, sustainable farms...</p>
+        </div>
+        <!-- More Q&A pairs -->
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Join Our Pack</h2>
+        <p>
+          Get exclusive deals and pet nutrition tips delivered to your inbox.
+        </p>
+
+        <form>
+          <input type="email" placeholder="Your Email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
