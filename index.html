@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- Header -->
@@ -33,7 +33,11 @@
           </button>
           <button class="cta-btn">Shop Now</button>
         </div>
-        <div class="mobile-menu" onclick="toggleMobileMenu()">
+        <div
+          class="mobile-menu"
+          onclick="toggleMobileMenu()"
+          aria-label="Navigation"
+        >
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -54,8 +58,12 @@
               </p>
 
               <div class="hero-actions">
-                <button class="cta-btn">🛒 Explore Feeds</button>
-                <button class="btn-secondary">📖 Learn More</button>
+                <button class="cta-btn" aria-label="Explore">
+                  🛒 Explore Feeds
+                </button>
+                <button class="btn-secondary" aria-label="Learn">
+                  📖 Learn More
+                </button>
               </div>
             </div>
             <div class="hero-image">
@@ -144,10 +152,12 @@
             <div class="footer-section">
               <h4>Quick Navigation</h4>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#" onclick="openShop()">Shop</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" aria-label="Home">Home</a></li>
+                <li>
+                  <a href="#" onclick="openShop()" aria-label="Shop">Shop</a>
+                </li>
+                <li><a href="#about" aria-label="About">About Us</a></li>
+                <li><a href="#contact" aria-label="Contact">Contact</a></li>
               </ul>
             </div>
             <div class="footer-section">
@@ -185,6 +195,6 @@
       </main>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
