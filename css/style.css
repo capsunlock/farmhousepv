@@ -389,6 +389,109 @@ body.nav-open .nav-links {
   color: var(--text-secondary);
 }
 
+.about-hero {
+  background: var(--gradient);
+  color: white;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-section {
+  padding: 4rem 1rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+.promise-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.promise-list li {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.image-grid {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.image-grid img {
+   max-width: 25%;
+   border-radius: 12px;
+   height: auto;
+}
+
+.team-grid {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.team-member {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin: auto;
+  max-width: 25%;
+  height: 230px;
+  width: auto;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.about-cta {
+  background: var(--bg-secondary);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Footer */
 footer {
   background: var(--bg-secondary);
@@ -397,12 +500,7 @@ footer {
 }
 
 .footer-content {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px 1fr));
-  gap: 3rem; */
-
   margin: 0 auto;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -514,11 +612,17 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .footer-content {
+  .footer-content, .image-grid, .team-grid {
     flex-wrap: wrap;
   }
   
   .footer-section {
+    flex: 1 1 calc(50% - 2rem);
+    min-width: 250px;
+  }
+
+  .image-grid img, .team-member{
+    width: 100%;
     flex: 1 1 calc(50% - 2rem);
     min-width: 250px;
   }
