@@ -11,7 +11,7 @@ function toggleTheme() {
   }
 
 window.addEventListener('scroll', () => {
-  const cards = document.querySelectorAll('.feature-card, .product-card');
+  const cards = document.querySelectorAll('.feature-card, .product-card, .about-section');
   cards.forEach(card => {
     const rect = card.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
  
   // Initialize card animation style
-  const cards = document.querySelectorAll('.feature-card, .product-card');
+  const cards = document.querySelectorAll('.feature-card, .product-card, .about-section');
   cards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
