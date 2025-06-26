@@ -9,7 +9,36 @@
   </head>
   <body>
     <header>
-      <!-- Use your shared nav here -->
+      <nav class="container">
+        <div class="logo">
+          <a href="index.html">🐾 Farm House</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" aria-label="Home">Home</a></li>
+          <li><a href="shop/index.html" aria-label="Online Shop">Shop</a></li>
+          <li><a href="about.html" aria-label="About">About Us</a></li>
+          <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle Theme"
+          >
+            <span id="theme-toggle-content">🌙</span>
+          </button>
+          <button class="cta-btn">Shop Now</button>
+        </div>
+        <div
+          class="mobile-menu"
+          onclick="toggleMobileMenu()"
+          aria-label="Navigation"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
     </header>
 
     <section class="about-hero">
