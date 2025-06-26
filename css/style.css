@@ -160,7 +160,8 @@ body.nav-open .nav-links {
 }
 
 .cta-btn:hover {
-  transform: translateY(-2px)
+  transform: translateY(-2px);
+  color: red;
 }
 
 .mobile-menu {
