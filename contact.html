@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Farm House</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo">
+          <a href="index.html">🐾 Farm House</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="shop/index.html#shop">Shop</a></li>
+          <li><a href="about.html#about">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+          <button class="cta-btn">Shop Now</button>
+        </div>
+        <div class="mobile-menu" onclick="toggleMobileMenu()">
+          <span class="bar"></span><span class="bar"></span
+          ><span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-hero">
+        <div class="container">
+          <h1>We're Here to Help 🐶</h1>
+          <p>
+            Need assistance or just want to say hi? Reach out using the options
+            below.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section contact-info">
+        <div class="container contact-details">
+          <div class="contact-block">
+            <div class="icon-badge">📧</div>
+            <h3>Email Us</h3>
+            <p>
+              <a href="mailto:support@farmhousepets.com"
+                >support@farmhousepets.com</a
+              >
+            </p>
+          </div>
+          <div class="contact-block">
+            <div class="icon-badge">📞</div>
+            <h3>Call Us</h3>
+            <p><a href="tel:+2348012345678">+234 801 234 5678</a></p>
+          </div>
+          <div class="contact-block">
+            <div class="icon-badge">🕐</div>
+            <h3>Business Hours</h3>
+            <p>Mon–Fri: 9am – 6pm WAT<br />Sat–Sun: 10am – 4pm</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section contact-form">
+        <div class="container">
+          <form id="contactForm" class="form-grid">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="you@example.com"
+              />
+            </div>
+            <div class="form-group full">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                rows="5"
+                required
+                placeholder="Write your message here..."
+              ></textarea>
+            </div>
+            <button type="submit" class="cta-btn">Send Message</button>
+            <p id="formResponse" class="form-response"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="about-section social-links">
+        <div class="container">
+          <h3>Let’s Stay Connected 🐾</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Optional map -->
+      <section class="about-section map-embed">
+        <div class="container">
+          <h3>📍 Visit Us (Optional)</h3>
+          <iframe
+            title="Farm House Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!..."
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <main>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>Quick Navigation</h4>
+              <ul>
+                <li><a href="index.html" aria-label="Home">Home</a></li>
+                <li>
+                  <a href="#" onclick="openShop()" aria-label="Shop">Shop</a>
+                </li>
+                <li>
+                  <a href="about.html#about" aria-label="About">About Us</a>
+                </li>
+                <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Pet Categories</h4>
+              <ul>
+                <li><a href="#" onclick="openShop()">Dog Food</a></li>
+                <li><a href="#" onclick="openShop()">Cat Food</a></li>
+                <li><a href="#" onclick="openShop()">Small Pets Food</a></li>
+                <li><a href="#" onclick="openShop()">Bird Food</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Customer Support</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping Information</a></li>
+                <li><a href="#">Returns and Refunds</a></li>
+                <li><a href="#">Track Your Order</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Stay Connected</h4>
+              <ul>
+                <li><a href="#">Newsletter Signup</a></li>
+                <li><a href="#">Social Media</a></li>
+                <li><a href="#">Customer Reviews</a></li>
+                <li><a href="#">Pet Care Blog</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Farm House</p>
+          </div>
+        </div>
+      </main>
+      <button id="backToTop" aria-label="Back to Top">⇡</button>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

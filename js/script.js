@@ -58,8 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 // On load check for stored theme
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem("theme") || "light";
@@ -77,4 +75,39 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   });
+});
+
+// Form success feedback (mock behavior)
+if (document.getElementById("contactForm")) {
+  const contactForm = document.getElementById("contactForm");
+  const response = document.getElementById("formResponse");
+
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    contactForm.reset();
+    response.textContent = "✅ Message sent successfully! We'll get back to you soon.";
+    setTimeout(() => response.textContent = "", 5000);
+  });
+}
+
+// Back To Top
+const backToTopBtn = document.getElementById("backToTop");
+
+//Detect the first large section of the page
+const firstSection = document.querySelector("main section");
+
+window.addEventListener("scroll", () => {
+  if (!firstSection) return;
+
+  const firstBottom = firstSection.offsetTop + firstSection.offsetHeight;
+
+  if (window.scrollY > firstBottom) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
