@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farm House - Premium Pet Feeds</title>
+    <title>Support Center - Farm House</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
@@ -50,102 +50,84 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Hero -->
-      <section class="hero" id="home">
+    <main id="support-center">
+      <section class="about-hero">
         <div class="container">
-          <div class="hero-content">
-            <div class="hero-text">
-              <h1>Premium Feeds for Your Pets</h1>
-              <p>
-                Your pet's health is our priority. Discover our natural pet food
-                that keeps your furry friends healthy, happy and full of energy.
-              </p>
+          <h1>Support Center 🛠</h1>
+          <p>
+            Get answers, tips, and help with anything related to Farm House.
+          </p>
+        </div>
+      </section>
 
-              <div class="hero-actions">
-                <button class="cta-btn" aria-label="Explore">
-                  🛒 Explore Feeds
-                </button>
-                <button class="btn-secondary" aria-label="Learn">
-                  📖 Learn More
-                </button>
-              </div>
+      <!-- FAQ Items -->
+      <section class="about-section">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+
+          <!-- Search Input -->
+          <div class="faq-search">
+            <div class="search-wrapper">
+              <input type="text" id="faqSearch" placeholder="Search FAQs..." />
+              <button id="clearSearch" aria-label="Clear search">×</button>
             </div>
-            <div class="hero-image">
-              <div class="product-showcase">
-                <div class="product-card">
-                  <div class="product-icon">🐕</div>
-                  <div class="product-badge">Hot</div>
-                  <h3>Dog Food</h3>
-                  <p>Premium nutrition for all breeds</p>
-                </div>
-                <div class="product-card">
-                  <div class="product-icon">🐱</div>
-                  <div class="product-badge">Hot</div>
-                  <h3>Cat Food</h3>
-                  <p>Delicious & healthy meal</p>
-                </div>
-                <div class="product-card">
-                  <div class="product-icon">🐹</div>
-                  <h3>Small Pet</h3>
-                  <p>Specialized nutrition</p>
-                </div>
-                <div class="product-card">
-                  <div class="product-icon">🐦</div>
-                  <div class="product-badge">Hot</div>
-                  <h3>Bird Food</h3>
-                  <p>Natural seed blends</p>
-                </div>
-              </div>
+            <div
+              id="noResults"
+              class="no-results-message"
+              style="display: none"
+            >
+              <p>😕 No matching FAQs found. Try a different keyword.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Items -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon">+</span>
+              How long does shipping take?
+            </button>
+            <div class="faq-content">
+              <p>Standard shipping takes 3–5 working days within Nigeria.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon">+</span>
+              How do I return an item?
+            </button>
+            <div class="faq-content">
+              <p>
+                You can request a return within 7 days of delivery. See our
+                return policy for details.
+              </p>
+            </div>
+          </div>
+
+          <!-- Add more .faq-item blocks as needed -->
+
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon">+</span>
+              Do you deliver on weekends?
+            </button>
+            <div class="faq-content">
+              <p>
+                Yes, weekend delivery is available in select regions — check
+                your shipping options at checkout.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Section -->
-      <section class="features" id="about">
+      <section class="about-section contact-cta">
         <div class="container">
-          <div class="section-header">
-            <h2>Why Choose Us?</h2>
-            <p>
-              We're committed to providing the highest quality nutrition for
-              your pets, whatever size or breed.
-            </p>
-          </div>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">🍂</div>
-              <h3>Natural Ingredients</h3>
-              <p>
-                Made with Premium, natural ingredients sourced from trusted
-                suppliers worldwide
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">🔬</div>
-              <h3>Scientifically Formulated</h3>
-              <p>
-                Developed by veterinary nutritionists to meet your pet's
-                specific dietary needs
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">🚌</div>
-              <h3>Fast Delivery</h3>
-              <p>
-                Free shipping on orders over $50 with delivery within 2-3
-                business days
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">⭐</div>
-              <h3>Expert Approved</h3>
-              <p>
-                All our products are veterinarian approved and tested for
-                quality and safety standards.
-              </p>
-            </div>
-          </div>
+          <h2>Still need help?</h2>
+          <p>
+            We’re always happy to assist —
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+          </p>
         </div>
       </section>
     </main>

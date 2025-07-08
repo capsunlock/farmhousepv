@@ -68,8 +68,9 @@
         </div>
       </section>
 
-      <section class="about-section contact-form">
+      <section class="about-section contact-form" id="dropReview">
         <div class="container">
+          <h2>Drop a Review</h2>
           <form id="contactForm" class="form-grid">
             <div class="form-group">
               <label for="name">Name</label>
@@ -83,23 +84,29 @@
                 required
                 placeholder="you@example.com"
               />
+
+              <label class="newsletter-optin">
+                <input type="checkbox" id="subscribe" name="subscribe" />
+                <span>I'd like to receive Newsletter and updates 🐾</span>
+              </label>
             </div>
+
             <div class="form-group full">
               <label for="message">Message</label>
               <textarea
                 id="message"
                 rows="5"
                 required
-                placeholder="Write your message here..."
+                placeholder="Share your thoughts..."
               ></textarea>
             </div>
-            <button type="submit" class="cta-btn">Send Message</button>
+            <button type="submit" class="cta-btn">Send Review</button>
             <p id="formResponse" class="form-response"></p>
           </form>
         </div>
       </section>
 
-      <section class="about-section social-links">
+      <section class="about-section social-links" id="social">
         <div class="container">
           <h3>Let’s Stay Connected 🐾</h3>
           <div class="social-icons">
@@ -112,9 +119,9 @@
       </section>
 
       <!-- Optional map -->
-      <section class="about-section map-embed">
+      <section class="about-section map-embed" id="map">
         <div class="container">
-          <h3>📍 Visit Us (Optional)</h3>
+          <h3>📍 Visit Us</h3>
           <iframe
             title="Farm House Location"
             src="https://www.google.com/maps/embed?pb=!1m18!..."
@@ -143,6 +150,11 @@
                 <li>
                   <a href="about.html#about" aria-label="About">About Us</a>
                 </li>
+                <li>
+                  <a href="support-center.html#support-center"
+                    >Support Center</a
+                  >
+                </li>
                 <li><a href="contact.html" aria-label="Contact">Contact</a></li>
               </ul>
             </div>
@@ -158,7 +170,11 @@
             <div class="footer-section">
               <h4>Customer Support</h4>
               <ul>
-                <li><a href="#">Help Center</a></li>
+                <li>
+                  <a href="support-center.html#support-center"
+                    >Support Center</a
+                  >
+                </li>
                 <li><a href="#">Shipping Information</a></li>
                 <li><a href="#">Returns and Refunds</a></li>
                 <li><a href="#">Track Your Order</a></li>
@@ -167,10 +183,15 @@
             <div class="footer-section">
               <h4>Stay Connected</h4>
               <ul>
-                <li><a href="#">Newsletter Signup</a></li>
-                <li><a href="#">Social Media</a></li>
-                <li><a href="#">Customer Reviews</a></li>
-                <li><a href="#">Pet Care Blog</a></li>
+                <li><a href="contact.html#dropReview">Newsletter Signup</a></li>
+                <li><a href="contact.html#social">Social Media</a></li>
+                <li><a href="contact.html#dropReview">Drop A Review</a></li>
+                <li>
+                  <a href="contact.html#map">
+                    <!-- Pet Care Blog -->
+                    Visit Us
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

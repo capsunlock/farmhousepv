@@ -78,36 +78,173 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Form success feedback (mock behavior)
-if (document.getElementById("contactForm")) {
+
+// if (document.getElementById("contactForm")) {
+//   const contactForm = document.getElementById("contactForm");
+//   const response = document.getElementById("formResponse");
+
+//   contactForm?.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     contactForm.reset();
+//     response.textContent = "✅ Message sent successfully! We'll get back to you soon.";
+//     setTimeout(() => response.textContent = "", 5000);
+//   });
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
   const response = document.getElementById("formResponse");
+  const newsletterCheckbox = document.getElementById("subscribe");
 
+  if (!response) return;
+
+  // Load saved newsletter preference (if exists)
+  document.addEventListener("DOMContentLoaded", () => {
+    const storedPreference = localStorage.getItem("newsletterOptIn");
+    if (storedPreference === "true") {
+      newsletterCheckbox.checked = true;
+    }
+  });
+
+  // Store newsletter preference on checkbox toggle
+  newsletterCheckbox?.addEventListener("change", () => {
+    localStorage.setItem("newsletterOptIn", newsletterCheckbox.checked);
+  });
+
+  // Handle form submission
   contactForm?.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    const wantsNewsletter = newsletterCheckbox.checked;
+    console.log("Wants Newsletter:", wantsNewsletter);
+
+    // Reset form + show response
     contactForm.reset();
-    response.textContent = "✅ Message sent successfully! We'll get back to you soon.";
-    setTimeout(() => response.textContent = "", 5000);
+    localStorage.setItem("newsletterOptIn", "false"); // Clear opt-in if unchecked
+
+    response.textContent = "✅ Thanks for your review!";
+
+    setTimeout(() => {
+      response.textContent = "";
+      // Optionally restore checkbox state if saved
+      const saved = localStorage.getItem("newsletterOptIn");
+      if (saved === "true") newsletterCheckbox.checked = true;
+    }, 5000);
   });
-}
+})
+
+
+// Support Center
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("faqSearch");
+  const clearBtn = document.getElementById("clearSearch");
+  const noResults = document.getElementById("noResults");
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  const highlight = (text, term) =>
+    term ? text.replace(new RegExp(`(${term})`, "gi"), "<mark>$1</mark>") : text;
+
+  function filterFAQs(term) {
+    let matchCount = 0;
+    faqItems.forEach((item) => {
+      const toggle = item.querySelector(".faq-toggle");
+      const content = item.querySelector(".faq-content");
+      const question = toggle.textContent.toLowerCase();
+      const answer = content.textContent.toLowerCase();
+      const match = question.includes(term) || answer.includes(term);
+
+      item.style.display = match ? "block" : "none";
+      item.classList.toggle("show", match);
+      if (match) matchCount++;
+
+      toggle.innerHTML = highlight(toggle.textContent, term);
+      content.innerHTML = highlight(content.textContent, term);
+    });
+
+    clearBtn.classList.toggle("visible", term.length > 0);
+    noResults.style.display = matchCount === 0 ? "block" : "none";
+  }
+
+  // ✅ Apply ?q= from URL
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("q") || "";
+  searchInput.value = query;
+  filterFAQs(query);
+
+  // ✅ Preload first FAQ open if no search
+  if (!query) {
+    const firstItem = document.querySelector(".faq-item");
+    if (firstItem) {
+      firstItem.classList.add("open");
+      const btn = firstItem.querySelector(".faq-toggle");
+      const icon = btn.querySelector(".faq-icon");
+      btn.setAttribute("aria-expanded", "true");
+      icon.textContent = "–";
+    }
+  }
+
+  // ✅ Search typing updates view + URL
+  searchInput?.addEventListener("input", () => {
+    const term = searchInput.value.trim();
+    filterFAQs(term);
+
+    const newURL = term
+      ? `${window.location.pathname}?q=${encodeURIComponent(term)}`
+      : window.location.pathname;
+
+    history.replaceState(null, "", newURL);
+  });
+
+  // ✅ Clear button resets everything
+  clearBtn?.addEventListener("click", () => {
+    searchInput.value = "";
+    filterFAQs("");
+    history.replaceState(null, "", window.location.pathname);
+  });
+
+  // ✅ Accordion toggle behavior
+  document.querySelectorAll(".faq-toggle").forEach((btn) => {
+    const item = btn.parentElement;
+    const icon = btn.querySelector(".faq-icon");
+
+    btn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      document.querySelectorAll(".faq-item").forEach((el) => {
+        el.classList.remove("open");
+        el.querySelector(".faq-toggle").setAttribute("aria-expanded", "false");
+        el.querySelector(".faq-icon").textContent = "+";
+      });
+
+      if (!isOpen) {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        icon.textContent = "–";
+      }
+    });
+  });
+});
 
 // Back To Top
-const backToTopBtn = document.getElementById("backToTop");
+if (document.getElementById("backToTop")) {
+  const backToTopBtn = document.getElementById("backToTop");
 
-//Detect the first large section of the page
-const firstSection = document.querySelector("main section");
+  //Detect the first large section of the page
+  const firstSection = document.querySelector("main section");
 
-window.addEventListener("scroll", () => {
-  if (!firstSection) return;
+  window.addEventListener("scroll", () => {
+    if (!firstSection) return;
 
-  const firstBottom = firstSection.offsetTop + firstSection.offsetHeight;
+    const firstBottom = firstSection.offsetTop + firstSection.offsetHeight;
 
-  if (window.scrollY > firstBottom) {
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
-  }
-});
+    if (window.scrollY > firstBottom) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
 
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
